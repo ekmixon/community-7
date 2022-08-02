@@ -62,10 +62,7 @@ def format_topics(summary):
             continue
 
         topics_text.extend(["", topic_name, '-' * len(topic_name), ""])
-        for item in items:
-            if item:
-                topics_text.append(f"* {item}")
-
+        topics_text.extend(f"* {item}" for item in items if item)
     return "\n".join(topics_text)
 
 
